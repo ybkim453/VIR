@@ -1,123 +1,111 @@
 .app {
-  padding: 20px;
-  max-width: 800px;
-  margin: 0 auto;
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
-/* 업로드 페이지 */
-.upload-page {
-  text-align: center;
-  padding: 100px 20px;
-}
-
-.upload-page h1 {
-  margin-bottom: 40px;
-}
-
-.upload-button {
-  display: inline-block;
-  padding: 15px 30px;
-  background: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-.upload-button:hover {
-  background: #0056b3;
-}
-
-/* 플레이어 페이지 */
-.player-page {
-  padding: 20px;
-}
-
-.new-video-btn {
-  margin-bottom: 20px;
-  padding: 10px 20px;
-  background: #6c757d;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.video-player {
+/* 공통 배경 */
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  max-width: 100%;
-  margin-bottom: 30px;
+  height: 100%;
+  z-index: -1;
 }
 
-/* 검색 섹션 */
-.search-section {
-  display: flex;
-  gap: 10px;
-  margin-top: 20px;
+.wave-section {
+  width: 130%;
+  height: 55vh;
+  background: url('./assets/wave.jpg') center/cover no-repeat;
+  position: relative;
 }
 
-.search-input {
-  flex: 1;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 16px;
-}
-
-.search-button {
-  padding: 10px 20px;
-  background: #28a745;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.search-button:hover {
-  background: #1e7e34;
-}
-
-.search-button:disabled {
-  background: #6c757d;
-  cursor: not-allowed;
-}
-
-/* 검색 결과 */
-.search-results {
-  margin-top: 30px;
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  background: #f9f9f9;
-}
-
-.search-results h3 {
-  margin-top: 0;
-  margin-bottom: 15px;
-}
-
-.result-item {
-  padding: 10px;
-  margin-bottom: 10px;
+.white-section {
+  width: 100%;
+  height: 50vh;
   background: white;
-  border: 1px solid #ddd;
-  border-radius: 3px;
-  cursor: pointer;
 }
 
-.result-item:hover {
-  background: #e9ecef;
+/* 공통 헤더 */
+.app-header {
+  text-align: center;
+  padding: 30px 20px 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.app-title {
+  margin: 0 0 16px 0;
+  color: #000000;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.title-main {
+  display: block;
+  font-size: 6rem;
+  font-weight: 1300;
+  letter-spacing: 2px;
+  margin-bottom: -30px;
+}
+
+.title-sub {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  opacity: 0.7;
+}
+
+.app-subtitle {
+  font-size: 1.2rem;
+  color: #666;
+  margin: 0;
+  font-weight: 300;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* 메인 컨텐츠 영역 */
+.app-content {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 /* 업로드 상태 */
 .upload-status {
-  padding: 15px;
-  margin: 20px 0;
-  background: #e7f3ff;
-  border: 1px solid #b3d9ff;
-  border-radius: 5px;
-  text-align: center;
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 15px 25px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid #ddd;
+  border-radius: 8px;
   font-weight: 600;
-  color: #0066cc;
+  color: #333;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .title-main {
+    font-size: 3rem;
+  }
+  
+  .title-sub {
+    font-size: 1.2rem;
+  }
+  
+  .app-subtitle {
+    font-size: 1rem;
+  }
+  
+  .app-header {
+    padding: 40px 20px 30px;
+  }
 }
