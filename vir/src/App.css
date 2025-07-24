@@ -1,0 +1,123 @@
+.app {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* 업로드 페이지 */
+.upload-page {
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.upload-page h1 {
+  margin-bottom: 40px;
+}
+
+.upload-button {
+  display: inline-block;
+  padding: 15px 30px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.upload-button:hover {
+  background: #0056b3;
+}
+
+/* 플레이어 페이지 */
+.player-page {
+  padding: 20px;
+}
+
+.new-video-btn {
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  background: #6c757d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.video-player {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 30px;
+}
+
+/* 검색 섹션 */
+.search-section {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.search-input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.search-button {
+  padding: 10px 20px;
+  background: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background: #1e7e34;
+}
+
+.search-button:disabled {
+  background: #6c757d;
+  cursor: not-allowed;
+}
+
+/* 검색 결과 */
+.search-results {
+  margin-top: 30px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background: #f9f9f9;
+}
+
+.search-results h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.result-item {
+  padding: 10px;
+  margin-bottom: 10px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.result-item:hover {
+  background: #e9ecef;
+}
+
+/* 업로드 상태 */
+.upload-status {
+  padding: 15px;
+  margin: 20px 0;
+  background: #e7f3ff;
+  border: 1px solid #b3d9ff;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: 600;
+  color: #0066cc;
+}
