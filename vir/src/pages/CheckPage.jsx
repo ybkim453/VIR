@@ -36,7 +36,6 @@ function CheckPage({ videoUrl, searchResults, currentResultIndex = 0, onYesClick
             <span className="time-range">{timeRange}</span>
           </div>
 
-          {/* 영상 썸네일/프레임 */}
           <div className="video-frame-section">
             {videoUrl ? (
               <video 
@@ -45,7 +44,6 @@ function CheckPage({ videoUrl, searchResults, currentResultIndex = 0, onYesClick
                 controls={false}
                 muted
                 onLoadedData={(e) => {
-                  // 해당 시간대로 이동
                   e.target.currentTime = startTime;
                 }}
               >
@@ -58,7 +56,6 @@ function CheckPage({ videoUrl, searchResults, currentResultIndex = 0, onYesClick
             )}
           </div>
 
-          {/* 예/아니오 버튼 */}
           <div className="choice-buttons">
             <button 
               className="choice-button yes-button"

@@ -4,7 +4,6 @@ import '../components/PromptingPage.css';
 function PromptingPage({ videoUrl, selectedResult, onPromptSubmit }) {
   const videoRef = useRef(null);
 
-  // selectedResult가 있을 때 영상을 해당 시간대로 스크러빙
   useEffect(() => {
     if (selectedResult && videoRef.current) {
       const video = videoRef.current;
@@ -14,10 +13,8 @@ function PromptingPage({ videoUrl, selectedResult, onPromptSubmit }) {
       };
       
       if (video.readyState >= 2) {
-        // 이미 로드된 경우
         video.currentTime = selectedResult.start;
       } else {
-        // 로드되기를 기다리는 경우
         video.addEventListener('loadeddata', handleLoadedData);
       }
     }
@@ -36,7 +33,6 @@ function PromptingPage({ videoUrl, selectedResult, onPromptSubmit }) {
     <div className="prompting-page">
       <div className="prompting-container">
         <div className="container-area">
-          {/* 영상 영역 */}
           <div className="video-section">
             {videoUrl ? (
               <video 
@@ -54,7 +50,6 @@ function PromptingPage({ videoUrl, selectedResult, onPromptSubmit }) {
             )}
           </div>
 
-          {/* 프롬프트 입력 영역 */}
           <form onSubmit={handleSubmit} className="prompt-form">
             <div className="prompt-input-container">
               <input
