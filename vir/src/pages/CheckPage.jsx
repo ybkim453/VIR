@@ -1,8 +1,28 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import '../components/CheckPage.css';
 
 function CheckPage({ videoUrl, searchResults, currentResultIndex = 0, onYesClick, onNoClick }) {
   const currentResult = searchResults && searchResults[currentResultIndex];
+  const videoRef = useRef(null);
+
+  // currentResultIndex가 변경될 때마다 영상을 해당 시간대로 이동
+  useEffect(() => {
+    if (currentResult && videoRef.current) {
+      const video = videoRef.current;
+      const handleLoadedData = () => {
+        video.currentTime = currentResult.start;
+        video.removeEventListener('loadeddata', handleLoadedData);
+      };
+      
+      if (video.readyState >= 2) {
+        // 이미 로드된 경우
+        video.currentTime = currentResult.start;
+      } else {
+        // 로드되기를 기다리는 경우
+        video.addEventListener('loadeddata', handleLoadedData);
+      }
+    }
+  }, [currentResult, currentResultIndex]);
   
   if (!currentResult) {
     return (
@@ -39,13 +59,11 @@ function CheckPage({ videoUrl, searchResults, currentResultIndex = 0, onYesClick
           <div className="video-frame-section">
             {videoUrl ? (
               <video 
+                ref={videoRef}
                 src={videoUrl} 
                 className="result-video"
                 controls={false}
                 muted
-                onLoadedData={(e) => {
-                  e.target.currentTime = startTime;
-                }}
               >
                 Your browser does not support the video tag.
               </video>
